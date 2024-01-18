@@ -12,7 +12,7 @@ import 'package:auto_route/auto_route.dart' as _i5;
 import 'package:food_donation_app/Pages/Login/login.dart' as _i2;
 import 'package:food_donation_app/Pages/Signup/Signup.dart' as _i3;
 import 'package:food_donation_app/Pages/SplashScreen/splashScreen.dart' as _i4;
-import 'package:food_donation_app/Pages/homePage.dart' as _i1;
+import 'package:food_donation_app/Pages/Donate/donateform.dart' as _i1;
 
 abstract class $AppRouter extends _i5.RootStackRouter {
   $AppRouter({super.navigatorKey});
@@ -22,7 +22,7 @@ abstract class $AppRouter extends _i5.RootStackRouter {
     HomePageRoute.name: (routeData) {
       return _i5.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i1.HomePage(),
+        child: _i1.DonateForm(),
       );
     },
     LoginPageRoute.name: (routeData) {

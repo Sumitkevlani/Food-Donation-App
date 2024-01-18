@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'camera_preview.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
 class DonateForm extends StatefulWidget {
-  const DonateForm({super.key});
+  const DonateForm({
+    super.key,
+  });
 
   @override
   State<DonateForm> createState() => _DonateFormState();
@@ -45,6 +48,7 @@ class _DonateFormState extends State<DonateForm> {
       'category': 'Packed items',
     }
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -208,7 +212,12 @@ class _DonateFormState extends State<DonateForm> {
                           width: 5.0,
                         ),
                         FloatingActionButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => CameraScreen()));
+                          },
                           backgroundColor: Colors.white,
                           shape: const CircleBorder(),
                           mini: true,

@@ -5,18 +5,20 @@ import 'package:food_donation_app/Router/route.dart';
 import 'package:food_donation_app/constants.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:camera/camera.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((value) => runApp(ProviderScope(child: MyApp())));
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
+  MyApp({Key? key}) : super(key: key);
 
   final _appRouter = AppRouter();
 
@@ -62,6 +64,9 @@ class MyApp extends StatelessWidget {
                         RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),
                     backgroundColor:
-                        MaterialStateProperty.all<Color>(buttonColor)))));
+                        MaterialStateProperty.all<Color>(buttonColor)))),
+        builder: (context, child) {
+          return child!;
+        });
   }
 }
